@@ -2,11 +2,12 @@
 constructor, assignment operator and operators >, <, >=, <=, ==, ++ (pre and post), +, +=,
 ( ), with the data members stored as pointer to integers*/
 
-#include<bits/stdc++.h>
+#include<iostream>
+//#include<bits/stdc++.h>
 using namespace std;
 class Complex
 {
-	int real,imag;
+	int real,imag,mag;
 	public:
 		Complex()
 		{
@@ -15,6 +16,14 @@ class Complex
 		{
 			real=r;
 			imag=i;
+		}
+		Complex operator () (int r,int i,int m)
+		{
+			Complex d;
+			 d.real=r;
+			 d.imag=i;
+			 d.mag=m;
+			return d;
 		}
 		Complex operator > (const Complex &rhs)
 		{
@@ -107,6 +116,13 @@ class Complex
 			cout<<"Real value is "<<real<<endl;
 			cout<<"Imaginary value is "<<imag<<endl;
 		}
+		void printm()
+		{
+			Complex c;
+			cout<<"Real value is "<<real<<endl;
+			cout<<"Imaginary value is "<<imag<<endl;
+			cout<<"Magnitude part is "<<mag<<endl;
+		}
 		~Complex() //Destructor
 		{
 		}
@@ -133,4 +149,7 @@ int main()
 	Complex c4;
 	c4=c1;
 	c4.print();
+	cout<<"Paranthesis operator overloading "<<endl;
+	Complex c5=c2(5,4,6);
+	c5.printm();
 }
