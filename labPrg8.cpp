@@ -1,20 +1,20 @@
 /*Define class stack, queue, linked-list, array, set using some data-type (int) with data
 members kept as private and functions kept in both protected and public sections.*/
-#include<iostream>
+#include<bits/stdc++.h>
+/*#include<iostream>
 #include <cstdlib>
-#include<set>
+#include<set>*/
 #define size 20
 #define sizeq 20
+using namespace std;
 int top=-1;
 int front =0;
 int rear=0;
-class node
-{
-public:
-	int data;
-	node *next;
-}*head=NULL,temp,ptr;
-class stack
+struct Node {
+   int data;
+   struct Node *next;
+}*head=NULL,*temp,*ptr;
+class stackss
 {
 	int data;
 	//int top=-1;
@@ -57,7 +57,7 @@ class stack
 			}
 		}
 };
-class queue
+class queues
 {
 	int queues[sizeq];
 	int data;
@@ -77,7 +77,7 @@ public:
 	void queue_print()
 	{
 		int i=front;
-		while(i<=rear)
+		while(i<rear)
 		{
 			cout<<queues[i]<<endl;
 			i++;
@@ -89,39 +89,36 @@ class linked_list
 public:	
 	void insert(int data)
 	{
-		//temp=(struct node *)new(sizeof(struct node));
-		node* temp= new node();
-		node* head=new node();
+		temp=(struct Node *)malloc(sizeof(struct Node));
 		temp->data=data;
 		temp->next=NULL;
 		if(head==NULL)
 		{
-			head=temp;
+			head=temp;	
 		}
 		else
 		{
 			temp->next=head;
-			head=temp;
-		}
+			head=temp;	
+		}	
 	}
 	void delet()
 	{
 		int t;
-		node* ptr = new node();
-		*ptr=*head;
+		ptr=head;
 		t=ptr->data;
-		*head=*ptr->next;
-		//ptr.next=NULL;
+		head=ptr->next;
+		ptr->next=NULL;
 		free(ptr);
 		cout<<"Element deleted is "<<t<<endl;
 	}
 	void linked_print()
 	{
-		ptr=*head;
-		while(head!=NULL)
+		ptr=head;
+		while(ptr!=NULL)
 		{
-			cout<<head->data<<endl;
-			head=head->next;
+			cout<<ptr->data<<endl;
+			ptr=ptr->next;
 		}
 	}
 };
@@ -141,7 +138,7 @@ public:
 			cin>>a[i];
 		}
 	}
-	void arrays_print()
+	void arrays_print(int n)
 	{
 		for(int i=0;i<n;i++)
 		{
@@ -152,7 +149,7 @@ public:
 int main()
 {
 	cout<<"Stack Operations "<<endl;
-	stack s;
+	stackss s;
 	s.push(20);
 	s.push(40);
 	s.push(50);
@@ -161,7 +158,7 @@ int main()
 	s.pop();
 	s.stack_print();
 	cout<<"Queue operations "<<endl;
-	queue q;
+	queues q;
 	q.push(10);
 	q.push(30);
 	q.push(60);
@@ -169,21 +166,21 @@ int main()
 	q.pop();
 	q.pop();
 	q.queue_print();
-	/*cout<<"Linked list operations "<<endl;
+	cout<<"Linked list operations "<<endl;
 	linked_list l;
 	l.insert(7);
 	l.insert(8);
 	l.insert(9);
 	l.linked_print();
 	l.delet();
-	l.delet();*/
+	l.delet();
 	cout<<"Array operations are "<<endl;
 	arrays a1;
-	a1.insert(6);
-	a1.arrays_print();
+	a1.insert(4);
+	a1.arrays_print(4);
 	cout<<"Set operations are "<<endl;
 	set<int> s1;
-	s1.insert(1);
+	s1.insert(11);
 	s1.insert(2);
 	s1.insert(3);
 	cout<<"Set values are "<<endl;
@@ -192,5 +189,11 @@ int main()
 	{
 		cout<<*it1<<"  ";
 	}
+	s1.erase(3);
+	cout<<endl<<"After deleting element set values are "<<endl;
+	set<int>::iterator it2;
+	for(it2=s1.begin();it2!=s1.end();it2++)
+	{
+		cout<<*it2<<"  ";
+	}
 }
-
