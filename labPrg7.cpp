@@ -1,6 +1,7 @@
 /* Define class matrix of integers using vector, with all possible operations like constructor,
 destructor, copy constructor and assignment operators */
 
+#include<bits/stdc++.h>
 #include<vector>
 #include<algorithm>
 #include<iostream>
@@ -24,6 +25,15 @@ class matrix
 			cout<<"Displaying Assignment operator "<<endl;
 			rows=rhs.rows;
 			col=rhs.col;
+			v=rhs.v;
+			return *this;
+		}
+		matrix(const matrix &cpy)
+		{
+			cout<<"Printing using copy constructor "<<endl;
+			rows = cpy.rows;
+			col=cpy.col;
+			v=cpy.v;
 		}
 		void enter()
 		{
@@ -51,7 +61,7 @@ class matrix
 				cout<<endl;   
     		} 
 		}
-		~matrix()
+		~matrix()//Destructor 
 		{
 		}
 };
@@ -59,5 +69,9 @@ int main()
 {
 	matrix m1(2,2);
 	m1.enter();
-	m1.print();
+	matrix m2;
+	m2=m1;
+	m2.print();
+	matrix m3(m1);
+	m3.print();
 }
