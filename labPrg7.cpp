@@ -20,7 +20,7 @@ class matrix
 			rows=r;
 			col=c;	
 		}
-		matrix operator =(const matrix& rhs)
+		matrix& operator =(const matrix& rhs)
 		{
 			cout<<"Displaying Assignment operator "<<endl;
 			rows=rhs.rows;
