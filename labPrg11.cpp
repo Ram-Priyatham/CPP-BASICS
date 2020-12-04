@@ -41,11 +41,11 @@ class matrix
 			{
 				for(j=0;j<col;j++)
 				{
-					if(m[i]>rhs.m[i])
+					if(m[i][j]>rhs.m[i][j])
 					{
 						c1++;
 					}
-					else if(m[i]<rhs.m[i])
+					else if(m[i][j]<rhs.m[i][j])
 						c2++;
 				}
 			}
@@ -61,11 +61,11 @@ class matrix
 			{
 				for(j=0;j<col;j++)
 				{
-					if(m[i]>rhs.m[i])
+					if(m[i][j]>rhs.m[i][j])
 					{
 						c1++;
 					}
-					else if(m[i]<rhs.m[i])
+					else if(m[i][j]<rhs.m[i][j])
 					{
 						c2++;
 					}
@@ -85,11 +85,11 @@ class matrix
 			{
 				for(j=0;j<col;j++)
 				{
-					if(m[i]<rhs.m[i])
+					if(m[i][j]<rhs.m[i][j])
 					{
 						c1++;
 					}
-					else if(m[i]>rhs.m[i])
+					else if(m[i][j]>rhs.m[i][j])
 						c2++;
 				}
 			}
@@ -105,11 +105,11 @@ class matrix
 			{
 				for(j=0;j<col;j++)
 				{
-					if(m[i]<rhs.m[i])
+					if(m[i][j]<rhs.m[i][j])
 					{
 						c1++;
 					}
-					else if(m[i]>rhs.m[i])
+					else if(m[i][j]>rhs.m[i][j])
 						c2++;
 				}
 			}
@@ -127,7 +127,7 @@ class matrix
 			{
 				for(j=0;j<col;j++)
 				{
-					if(m[i]==rhs.m[i])
+					if(m[i][j]==rhs.m[i][j])
 						cnt++;	
 				}
 			}
