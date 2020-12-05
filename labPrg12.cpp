@@ -32,7 +32,7 @@ class matrix
 			m=rhs.m;
 			return *this;
 		}
-		matrix operator >(const matrix &rhs)
+		matrix& operator >(const matrix &rhs)
 		{
 			int c1=0,c2=0;
 			for(i=0;i<rows;i++)
@@ -51,8 +51,9 @@ class matrix
 				cout<<"First matrix is larger"<<endl;
 			else
 				cout<<"Second matrix is larger"<<endl;
+			return *this;
 		}
-		matrix operator >=(const matrix &rhs)
+		matrix& operator >=(const matrix &rhs)
 		{
 			int c1=0,c2=0;
 			for(i=0;i<rows;i++)
@@ -75,8 +76,9 @@ class matrix
 				cout<<"Both matrices are equal"<<endl;
 			else
 				cout<<"Second matrix is larger"<<endl;
+			return *this;
 		}
-		matrix operator <(const matrix &rhs)
+		matrix& operator <(const matrix &rhs)
 		{
 			int c1=0,c2=0;
 			for(i=0;i<rows;i++)
@@ -95,8 +97,9 @@ class matrix
 				cout<<"First matrix is smaller"<<endl;
 			else
 				cout<<"Second matrix is smaller"<<endl;
+			return *this;
 		}
-		matrix operator <=(const matrix &rhs)
+		matrix& operator <=(const matrix &rhs)
 		{
 			int c1=0,c2=0;
 			for(i=0;i<rows;i++)
@@ -117,8 +120,9 @@ class matrix
 				cout<<"Both matrices are equal"<<endl;
 			else
 				cout<<"Second matrix is smaller"<<endl;
+			return *this;
 		}
-		matrix operator ==(const matrix &rhs)
+		matrix& operator ==(const matrix &rhs)
 		{
 			int cnt=0;
 			for(i=0;i<rows;i++)
@@ -133,8 +137,9 @@ class matrix
 				cout<<"Both matrices are equal"<<endl;
 			else
 				cout<<"Both matrices are not equal"<<endl;
+			return *this;
 		}
-		matrix operator +=(const matrix &rhs)
+		matrix& operator +=(const matrix &rhs)
 		{
 			for(i=0;i<rows;i++)
 			{
@@ -143,8 +148,9 @@ class matrix
 					m[i][j]=m[i][j]+rhs.m[i][j];
 				}
 			}
+			return *this;
 		}
-		matrix operator +(const matrix &rhs)
+		matrix& operator +(const matrix &rhs)
 		{
 			for(i=0;i<rows;i++)
 			{
@@ -154,8 +160,9 @@ class matrix
 
 				}
 			}
+			return *this;
 		}
-		matrix operator ++()//Pre increment
+		matrix& operator ++()//Pre increment
 		{
 			for(i=0;i<rows;i++)
 			{
@@ -164,8 +171,9 @@ class matrix
 					++m[i][j];
 				}
 			}
+			return *this;
 		}
-		matrix operator ++(int)//Post increment
+		matrix& operator ++(int)//Post increment
 		{
 			
 			for(i=0;i<rows;i++)
@@ -175,6 +183,7 @@ class matrix
 					m[i][j]++;
 				}
 			}
+			return *this;
 		}
 		void enter()
 		{
