@@ -15,7 +15,7 @@ class vectors
 		{
 			n=x;
 		}
-		vectors operator <(const vectors &rhs)
+		vectors& operator <(const vectors &rhs)
 		{
 			int c1=0,c2=0;
 			for(int i=0;i<n;i++)
@@ -38,7 +38,7 @@ class vectors
 				cout<<"1st vector is smaller"<<endl;
 			}
 		}
-		vectors operator >(const vectors &rhs)
+		vectors& operator >(const vectors &rhs)
 		{
 			int c1=0,c2=0;
 			for(int i=0;i<n;i++)
@@ -61,7 +61,7 @@ class vectors
 				cout<<"2nd vector is larger"<<endl;
 			}
 		}
-		vectors operator <=(const vectors &rhs)
+		vectors& operator <=(const vectors &rhs)
 		{
 			int c1=0,c2=0;
 			for(int i=0;i<n;i++)
@@ -88,7 +88,7 @@ class vectors
 				cout<<"1st vector is smaller"<<endl;
 			}
 		}
-		vectors operator >=(const vectors &rhs)
+		vectors& operator >=(const vectors &rhs)
 		{
 			int c1=0,c2=0;
 			for(int i=0;i<n;i++)
@@ -115,7 +115,7 @@ class vectors
 				cout<<"2nd vector is larger"<<endl;
 			}
 		}
-		vectors operator ==(const vectors &rhs)
+		vectors& operator ==(const vectors &rhs)
 		{
 			int cnt=0;
 			for(int i=0;i<n;i++)
@@ -132,14 +132,14 @@ class vectors
 			else
 				cout<<"Both vectors are not equal"<<endl;
 		}
-		vectors operator +=(const vectors &rhs)
+		vectors& operator +=(const vectors &rhs)
 		{
 			for(int i=0;i<n;i++)
 			{
 				v[i]=v[i]+rhs.v[i];
 			}
 		}
-		vectors operator +(const vectors &rhs)
+		vectors& operator +(const vectors &rhs)
 		{
 			
 			for(int i=0;i<n;i++)
@@ -147,7 +147,7 @@ class vectors
 				
 			}
 		}
-		vectors operator =(const vectors &rhs)
+		vectors& operator =(const vectors &rhs)
 		{
 			v=rhs.v;
 			cout<<"Assignment operator printing "<<endl;
@@ -181,11 +181,11 @@ int main()
 	v2.print();*/
 	vectors v3(3);
 	v3.enter();
-	/*v1<v3;
+	v1<v3;
 	v1<=v3;
 	v1>v3;
 	v1>=v3;
-	v1==v3;*/
+	v1==v3;
 	v1+=v3;
 	v1.print();
 }
