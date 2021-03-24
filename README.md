@@ -1,3 +1,3 @@
 ### CPP-OOPS-BASICS
 
-<h2> Basic OOPs concepts programs in CPP</h2>
+<h2> Basic OOPs concept programs in CPP</h2>
